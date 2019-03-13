@@ -8,14 +8,16 @@ bang！ 现在我们拥有一个名为**learngit**的repository了。git会在�
 # 创建文件
 我们可以以任意手段创建一个文件readme.txt，需要注意的是，建议使用utf-8编码格式化的文件，否则的话，git可能将文本文件视为二进制文件，那样git的很多功能都无法体现出来了。
 
-# 提交到stage
+# 提交到stage和master
 我们在本地使用notepad++,vim或者visual studio code等文本编辑器**对于文件做出的更改内容被git视为work内容，这些操作不会被git记录。**
 
 为了将这些信息被git记录上，我们需要两个操作
 1. 将修改的文件放入stage，这里我们执行`git add readme.txt`，当然可以一次提交多个文件。
-2. 让git把更改信息记录下来，需要我们执行`git commit -m "这里是commit备注"`
+2. 让git把更改信息记录下来，需要我们执行`git commit -m "这里是commit备注"`，这样将stage的更改提交到master (master是真正的版本库，当然你可以改这个默认名字)
 
 如果想要提交所有的更改，直接执行`git commit -a`
+
+![](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0)
 
 经过这两项操作，我们已经将我们所做的更改让git记录下来了。当然我们可以将其视为一个小的版本。而且每个小版本还有我们的备注。
 
@@ -48,8 +50,11 @@ index c9bb679..77a0fa4 100644
 1.  git reset --hard HEAD^
 
 
-HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上个版本，HEAD~100表示前100个版本，当然我觉得正常人不会这么用HEAD~100
+    HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上个版本，HEAD~100表示前100个版本，当然我觉得正常人不会这么用HEAD~100
 
 2. git reset --hard "version_hash"
 
-version_hash 表示每次commit后git反馈的版本的hash，不要真的写"version_hash"
+    version_hash 表示每次commit后git反馈的版本的hash，不要真的写"version_hash"，举个栗子：`git reset --hard 4b8091be3b9c`，这里的hash不用写全，写一部分让git认出来就行，比如也可以这么写`git reset --hard 4b80`，这个命令同上面一个命令达到一样的效果。
+
+    那么如何获得hash呢？可以执行`git log`，这个是看当前版本线的，如果想要的版本不在当前版本线的话，执行`git relog`以查看所有的版本线。
+    
