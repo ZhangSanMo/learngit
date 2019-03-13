@@ -11,11 +11,11 @@ bang！ 现在我们拥有一个名为**learngit**的repository了。git会在�
 # 提交到stage和master
 我们在本地使用notepad++,vim或者visual studio code等文本编辑器**对于文件做出的更改内容被git视为work内容，这些操作不会被git记录。**
 
-为了将这些信息被git记录上，我们需要两个操作
+为了将这些信息被git记录上，我们需要两个操作：
 1. 将修改的文件放入stage，这里我们执行`git add readme.txt`，当然可以一次提交多个文件。
 2. 让git把更改信息记录下来，需要我们执行`git commit -m "这里是commit备注"`，这样将stage的更改提交到master (master是真正的版本库，当然你可以改这个默认名字)
 
-如果想要提交所有的更改，直接执行`git commit -a`
+如果想要提交所有的更改，直接执行`git commit -a -m "这里是commit备注"`
 
 ![](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0)
 
