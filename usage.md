@@ -65,3 +65,29 @@ index c9bb679..77a0fa4 100644
 
 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令`git reset HEAD file`，就回到了场景1，第二步按场景1操作。
 
+# 远程仓库
+目前为止，git的操作都是在本地进行的，但是为了协同工作或者展示，需要将仓库上传到服务器，[github](https://github.com)给我们提供了一个服务器，自己个人的一些项目就可以放到github上。
+
+那么如何将自己的本地仓库推送到github呢？
+
+1. 首先和github确认彼此的身份，类似登陆服务器。
+
+    这里登陆使用的是rsa密钥的形式，先生成公钥和私钥：
+    
+    `ssh-keygen -t rsa -C youremail@example.com`
+    
+    生成的公钥和私钥**必须放到用户目录下的.ssh文件夹**，我的电脑上是C:\Users\用户名\\.ssh\。会生成两个文件id_rsa.pub是公钥，id_rsa是密钥。github需要你的id_rsa.pub里面的文件内容。
+
+    进入github-Settings-SSH keys-New SSH key将id_rsa.pub里面的内容复制进去。现在github拥有公钥，自己拥有私钥，这样我们就可以匹配登陆了。
+
+2. 在github上建立repository
+
+    本地仓库名和远程的仓库名可能不一样，这里我们建立一个learngit。
+
+3. 推送本地仓库到github的仓库
+
+    a. 执行`git remote add origin git@github.com:michaelliao/learngit.git`
+    
+    这里解释一下这个命令，`git remote`表示要对远程服务器进行操作，`add origin git@github.com:michaelliao/learngit.git` 表示将给定地址的repository给个小标签origin，之后origin就表示这个repository的地址了。
+
+    执行`git push origin master`，意思是将本地的branch推送到origin的master branch。  
