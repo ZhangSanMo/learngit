@@ -36,3 +36,4 @@ index c9bb679..77a0fa4 100644
 \ No newline at end of file
 ```
 
+尽管我觉得不太需要，但是如果你忘了自己是否更改过什么文件，可以使用`git status`大概看一下自己更改了什么文件。
