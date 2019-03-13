@@ -87,8 +87,8 @@ index c9bb679..77a0fa4 100644
 
 3. 推送本地仓库到github的仓库
 
-    a. 执行`git remote add origin git@github.com:michaelliao/learngit.git`
+    -  执行`git remote add origin git@github.com:michaelliao/learngit.git`
     
         这里解释一下这个命令，`git remote`表示要对远程服务器进行操作，`add origin git@github.com:michaelliao/learngit.git` 表示将给定地址的repository给个小标签origin，之后origin就表示这个repository的地址了。
 
-    b. 执行`git push origin master`，意思是将本地的master branch推送到origin的master branch。详细内容可看：[git push详细用法](https://www.cnblogs.com/qianqiannian/p/6008140.html)
+    - 执行`git push origin master`，意思是将本地的master branch推送到origin的master branch。详细内容可看：[git push详细用法](https://www.cnblogs.com/qianqiannian/p/6008140.html)
